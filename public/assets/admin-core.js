@@ -200,7 +200,7 @@
       '<div class="ad-main" id="adMain"><div class="wrapx" id="adView"></div></div></div>';
     view();
   }
-  function sections(){ return SECTIONS.concat(B.security ? [['security', 'Status & security']] : []); }
+  function sections(){ return SECTIONS.concat(B.security ? [['security', 'Password & security']] : []); }
   root.addEventListener('submit', async function(e){
     if (e.target.id !== 'adLogin') return;
     e.preventDefault();

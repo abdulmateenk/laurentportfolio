@@ -16,7 +16,7 @@ window.LR = (function(){
   };
   var BOLT = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>';
   var HEART = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-8.6C1 9 3 5 6.8 5c2 0 3.4 1.1 5.2 3 1.8-1.9 3.2-3 5.2-3C21 5 23 9 21.3 12.4 19 16.6 12 21 12 21z"/></svg>';
-  var MK = '<svg style="color:#fff" aria-hidden="true"><use href="#mk"/></svg>';
+  var MK = '<svg style="color:#fff" viewBox="1.5 1 101.5 108" aria-hidden="true"><use href="#mk"/></svg>';
   var digits = function(s){ return String(s || '').replace(/\D/g, ''); };
   var jsonSafe = function(o){ return JSON.stringify(o).replace(/</g, '\\u003c'); };
   var priceNum = function(p){ var m = String(p.price || '').replace(/,/g, '').match(/\d+(\.\d+)?/); if (!m) return null; var n = +m[0]; if (/k\b/i.test(p.price)) n *= 1000; return n; };
