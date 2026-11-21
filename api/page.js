@@ -8,6 +8,9 @@ module.exports = async (req, res) => {
   const html = site.renderPage(data, { view, base: site.siteUrl(req) });
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
-  res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=10, stale-while-revalidate=60');
+  // Never cached: a publish from /manage shows on the next page load.
+  res.setHeader('Cache-Control', 'no-store, max-age=0');
+  res.setHeader('CDN-Cache-Control', 'no-store');
+  res.setHeader('Vercel-CDN-Cache-Control', 'no-store');
   res.end(html);
 };
