@@ -510,6 +510,17 @@ body:not(.v-terms) #terms-view{display:none}
 .lg-mark{fill:var(--gold-2)}
 
 .flogo .lg-mark{fill:currentColor}
+
+/* ---------- Service cards open the matching prices ---------- */
+.svc{position:relative;cursor:pointer}
+.svc-link{position:absolute;inset:0;z-index:3;border-radius:inherit}
+.svc-link:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
+.svc .pr{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.svc .more{font-size:13px;font-weight:600;color:var(--gold);opacity:.75;transform:translateX(-4px);transition:opacity .35s,transform .45s var(--ease)}
+.svc:hover .more{opacity:1;transform:none}
+.plan.flash{animation:planFlash 2.1s var(--ease)}
+@keyframes planFlash{0%,100%{box-shadow:0 0 0 0 rgba(201,160,79,0)}15%,60%{box-shadow:0 0 0 3px var(--gold-2),0 24px 50px -24px rgba(201,160,79,.75)}}
+@media (prefers-reduced-motion: reduce){.plan.flash{box-shadow:0 0 0 3px var(--gold-2)}}
 </style>
 <!--HEAD-END-->
 <a class="skip" href="#main">Skip to content</a>

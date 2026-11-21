@@ -34,6 +34,7 @@
     var id = a.getAttribute('href');
     if (id === '#terms' || id === '#admin') { closeMenu(); return; }
     if (a.dataset.service) setService(a.dataset.service, a.dataset.plan);
+    if (a.dataset.tab) { setTab(a.dataset.tab); if (a.dataset.focus) setTimeout(function(){ flashPlan(a.dataset.tab, a.dataset.focus); }, 900); }
     var t = id.length > 1 && document.querySelector(id); if (!t) return;
     e.preventDefault(); closeMenu();
     if (/^\/terms\/?$/.test(location.pathname)) { location.href = '/' + id; return; }
@@ -157,6 +158,15 @@
     moveKnob();
   }
   document.addEventListener('click', function(e){ var b = e.target.closest && e.target.closest('.toggle button'); if (b) setTab(b.dataset.tab); });
+  /* Briefly highlight one plan, e.g. after a service card was clicked */
+  function flashPlan(tab, name){
+    var panel = document.getElementById('p-' + tab); if (!panel) return;
+    $$('.plan', panel).forEach(function(p){
+      var h = $('h3', p); if (!h || h.textContent.trim() !== name) return;
+      p.classList.remove('flash'); void p.offsetWidth; p.classList.add('flash');
+      setTimeout(function(){ p.classList.remove('flash'); }, 2200);
+    });
+  }
   document.addEventListener('keydown', function(e){
     var b = e.target.closest && e.target.closest('.toggle button'); if (!b || (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft')) return;
     var bs = $$('.toggle button'), i = bs.indexOf(b), n = bs[(i + (e.key === 'ArrowRight' ? 1 : bs.length - 1)) % bs.length];
