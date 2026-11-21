@@ -61,7 +61,22 @@ window.LAdminBackend = (function(){
         .catch(function(e){ w.document.body.innerHTML = '<p style="font:16px system-ui;padding:24px">Preview failed. ' + String(e.message).replace(/</g, '&lt;') + '</p>'; });
     },
     security: function(){
-      return '<h3>Password & security</h3><p class="hint">Only people with the password can open this page. Sessions end after 12 hours, and 5 wrong passwords lock sign-in for 15 minutes.</p>' +
+      setTimeout(function(){
+        var el = document.getElementById('siteStatus'); if (!el) return;
+        api('/api/status').then(function(s){
+          var when = s.lastPublished ? new Date(s.lastPublished).toLocaleString() : 'not yet';
+          var ok = s.storage === 'Vercel Blob' || s.storage === 'local .data folder';
+          el.innerHTML = '<div class="ad-grid">' +
+            '<div><b>Storage</b><br><span style="color:' + (ok ? '#1F7A4C' : '#B4321F') + '">' + s.storage + '</span></div>' +
+            '<div><b>Last publish</b><br>' + when + '</div>' +
+            '<div><b>Saved versions</b><br>' + (s.versions == null ? 'n/a' : s.versions) + '</div>' +
+            '<div><b>Deployment</b><br>' + (s.deployedAt || 'local') + '</div></div>' +
+            (s.storage === 'not connected' ? '<p class="ad-msg err" style="margin-top:12px">Vercel hasn\'t given this deployment access to Blob. In Vercel, open Deployments, click the three dots on the latest one and choose Redeploy.</p>' : '') +
+            (s.error ? '<p class="ad-msg err" style="margin-top:12px">' + s.error.replace(/</g, '&lt;') + '</p>' : '');
+        }).catch(function(e){ el.textContent = 'Could not read the status: ' + e.message; });
+      }, 0);
+      return '<div class="ad-card"><h4>Site status</h4><div id="siteStatus">Checking…</div></div>' +
+        '<h3>Password & security</h3><p class="hint">Only people with the password can open this page. Sessions end after 12 hours, and 5 wrong passwords lock sign-in for 15 minutes.</p>' +
         '<form class="ad-card" id="pwForm"><h4>Change password</h4><div class="ad-grid">' +
         '<div class="ad-f full"><label for="pw-cur">Current password</label><input id="pw-cur" type="password" autocomplete="current-password" required></div>' +
         '<div class="ad-f"><label for="pw-new">New password</label><input id="pw-new" type="password" autocomplete="new-password" minlength="10" required><small>At least 10 characters. A short sentence works well.</small></div>' +
