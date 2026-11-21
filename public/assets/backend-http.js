@@ -69,7 +69,7 @@ window.LAdminBackend = (function(){
           el.innerHTML = '<div class="ad-grid">' +
             '<div><b>Storage</b><br><span style="color:' + (ok ? '#1F7A4C' : '#B4321F') + '">' + s.storage + '</span></div>' +
             '<div><b>Last publish</b><br>' + when + '</div>' +
-            '<div><b>Saved versions</b><br>' + (s.versions == null ? 'n/a' : s.versions) + '</div>' +
+            '<div><b>Saved versions</b><br>' + (s.versions == null ? 'n/a' : s.versions) + (s.access ? ' · ' + s.access : '') + '</div>' +
             '<div><b>Deployment</b><br>' + (s.deployedAt || 'local') + '</div></div>' +
             (s.storage === 'not connected' ? '<p class="ad-msg err" style="margin-top:12px">Vercel hasn\'t given this deployment access to Blob. In Vercel, open Deployments, click the three dots on the latest one and choose Redeploy.</p>' : '') +
             (s.error ? '<p class="ad-msg err" style="margin-top:12px">' + s.error.replace(/</g, '&lt;') + '</p>' : '');
