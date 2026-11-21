@@ -1,0 +1,433 @@
+{
+  "brand": {
+    "name": "Laurent",
+    "email": "hello@laurent.studio",
+    "whatsapp": "",
+    "phone": "",
+    "city": "Karachi",
+    "country": "Pakistan",
+    "replyTime": "We reply within one working day."
+  },
+  "seo": {
+    "title": "Laurent Services",
+    "description": "Laurent designs websites, online stores and brands, and builds ERP back-office systems for restaurants, shops and growing businesses in Karachi and across Pakistan. Clear starting prices in PKR and a free written quote.",
+    "keywords": "website design Karachi, ERP system Pakistan, restaurant POS, branding agency Karachi, online store development"
+  },
+  "hero": {
+    "line1": "Running a business?",
+    "rotate": [
+      "We'll build your website.",
+      "We'll design your brand.",
+      "We'll run your back office.",
+      "We'll take orders online."
+    ],
+    "industries": [
+      "Restaurants",
+      "Retail shops",
+      "Pharmacies",
+      "Distributors",
+      "Salons"
+    ],
+    "stats": [
+      {
+        "value": "Rs 35k",
+        "label": "Websites starting from"
+      },
+      {
+        "value": "3–6 wks",
+        "label": "Typical delivery"
+      },
+      {
+        "value": "30 days",
+        "label": "Free support after launch"
+      }
+    ],
+    "text": "Laurent builds websites, brands and ERP back offices for small businesses in Karachi and across Pakistan. Websites and branding have clear starting prices. ERP systems are quoted on the size of your business.",
+    "button": "Get a free quote"
+  },
+  "erp": {
+    "title": "What one back-office system looks like",
+    "points": [
+      {
+        "n": "1",
+        "t": "dashboard for every branch"
+      },
+      {
+        "n": "0",
+        "t": "paper order slips"
+      },
+      {
+        "n": "24/7",
+        "t": "sales and stock on your phone"
+      }
+    ],
+    "projects": [
+      {
+        "id": "w",
+        "name": "Wrapline ERP",
+        "sub": "Car PPF studio · In progress"
+      },
+      {
+        "id": "a",
+        "name": "Al Ameen Hub",
+        "sub": "Al Ameen Trading Corporation"
+      }
+    ],
+    "slides": [
+      {
+        "p": "w",
+        "label": "Wrapline ERP · Dashboard",
+        "src": "/img/erp-wrapline-dash.webp",
+        "alt": "Wrapline ERP dashboard with revenue by month, division margins and car brands served"
+      },
+      {
+        "p": "w",
+        "label": "Wrapline ERP · PPF roll tracker",
+        "src": "/img/erp-wrapline-rolls.webp",
+        "alt": "Wrapline ERP PPF roll tracker showing film left on each roll"
+      },
+      {
+        "p": "w",
+        "label": "Wrapline ERP · Financials",
+        "src": "/img/erp-wrapline-financials.webp",
+        "alt": "Wrapline ERP profit and loss by PPF, parts and tyres"
+      },
+      {
+        "p": "a",
+        "label": "Al Ameen Hub · Dashboard",
+        "src": "/img/erp-alameen-dashboard.webp",
+        "alt": "Al Ameen Hub dashboard with orders, stock value, imports and tasks waiting for approval"
+      },
+      {
+        "p": "a",
+        "label": "Al Ameen Hub · Inventory",
+        "src": "/img/erp-alameen-stock.webp",
+        "alt": "Al Ameen Hub stock on hand by store, bin and expiry"
+      },
+      {
+        "p": "a",
+        "label": "Al Ameen Hub · HR",
+        "src": "/img/erp-alameen-hr.webp",
+        "alt": "Al Ameen Hub HR employee register with leave and payroll tabs"
+      }
+    ]
+  },
+  "services": [
+    {
+      "key": "web",
+      "title": "Websites",
+      "text": "A fast, mobile-first site with your menu or services, WhatsApp button, map and contact form.",
+      "price": "From Rs 35,000"
+    },
+    {
+      "key": "store",
+      "title": "Online stores",
+      "text": "Sell online with a catalogue, cart, cash on delivery, online payments and an admin to manage orders.",
+      "price": "From Rs 150,000"
+    },
+    {
+      "key": "brand",
+      "title": "Branding",
+      "text": "A logo, colours and templates that look the same on your sign, packaging, menu and social pages.",
+      "price": "From Rs 20,000"
+    },
+    {
+      "key": "erp",
+      "title": "ERP & back office",
+      "text": "One system for sales, stock, suppliers, staff and reports, across every branch. Priced by the size of your setup.",
+      "price": "Custom quote",
+      "img": "/img/erp-wrapline-dash.webp"
+    },
+    {
+      "key": "portal",
+      "title": "Custom portals",
+      "text": "Booking systems, dealer portals and internal tools built around how your team already works.",
+      "price": "Custom quote"
+    }
+  ],
+  "servicesCta": {
+    "title": "Get a FREE quote for your project",
+    "text": "Tell us what you need. We reply with a clear scope and price within one working day.",
+    "button": "Get a free quote"
+  },
+  "pricing": {
+    "note": "All prices in PKR.",
+    "cats": [
+      {
+        "key": "web",
+        "label": "Websites",
+        "note": "For businesses that need to be found, trusted and ordered from online.",
+        "plans": [
+          {
+            "name": "Starter site",
+            "style": "plain",
+            "tab": "Fixed price",
+            "icon": "site",
+            "prefix": "",
+            "price": "Rs 35,000",
+            "suffix": "fixed",
+            "desc": "A one-page site that tells customers who you are and how to reach you.",
+            "button": "Start my site",
+            "service": "Website",
+            "features": [
+              "One page, mobile-first",
+              "WhatsApp button and contact form",
+              "Google Maps and opening hours",
+              "Domain and hosting setup"
+            ]
+          },
+          {
+            "name": "Business website",
+            "style": "pop",
+            "tab": "Most popular",
+            "icon": "page",
+            "prefix": "From",
+            "price": "Rs 75,000",
+            "suffix": "",
+            "desc": "A full site for your services, menu or catalogue that you can edit yourself.",
+            "button": "Get a quote",
+            "service": "Website",
+            "features": [
+              "Up to 8 pages",
+              "Edit text and photos yourself",
+              "Google Business profile and basic SEO",
+              "Speed and security setup"
+            ]
+          },
+          {
+            "name": "Online store",
+            "style": "plain",
+            "tab": "Fixed scope",
+            "icon": "bag",
+            "prefix": "From",
+            "price": "Rs 150,000",
+            "suffix": "",
+            "desc": "Your own store, so customers can order without waiting for a reply in DMs.",
+            "button": "Open my store",
+            "service": "Online store",
+            "features": [
+              "Catalogue, search and cart",
+              "Cash on delivery and online payments",
+              "WhatsApp orders",
+              "Admin for products and orders"
+            ]
+          },
+          {
+            "name": "Care plan",
+            "style": "fav",
+            "tab": "Owners love it",
+            "icon": "clock",
+            "prefix": "",
+            "price": "Rs 8,000",
+            "suffix": "/month",
+            "desc": "We look after your site after launch so you never have to think about it.",
+            "button": "Ask about care",
+            "service": "Website",
+            "features": [
+              "Hosting and daily backups",
+              "Updates and security fixes",
+              "Small changes each month",
+              "Direct WhatsApp support"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "brand",
+        "label": "Branding",
+        "note": "For a new business, a new branch, or a brand that needs a refresh.",
+        "plans": [
+          {
+            "name": "Logo starter",
+            "style": "plain",
+            "tab": "Fixed price",
+            "icon": "logo",
+            "prefix": "",
+            "price": "Rs 20,000",
+            "suffix": "fixed",
+            "desc": "A clean, usable logo for a new business, ready in about a week.",
+            "button": "Start my logo",
+            "service": "Branding",
+            "features": [
+              "3 logo directions",
+              "2 revision rounds",
+              "Files for print, signs and social",
+              "Main brand colours"
+            ]
+          },
+          {
+            "name": "Brand identity",
+            "style": "pop",
+            "tab": "Most popular",
+            "icon": "grid",
+            "prefix": "From",
+            "price": "Rs 55,000",
+            "suffix": "",
+            "desc": "A complete look that stays consistent everywhere your customers see you.",
+            "button": "Get a quote",
+            "service": "Branding",
+            "features": [
+              "Logo system and icon",
+              "Colours and fonts",
+              "Business card and letterhead",
+              "Social templates and brand guide"
+            ]
+          },
+          {
+            "name": "Launch kit",
+            "style": "plain",
+            "tab": "Fixed scope",
+            "icon": "shop",
+            "prefix": "From",
+            "price": "Rs 90,000",
+            "suffix": "",
+            "desc": "For opening a new shop, branch or restaurant with everything designed at once.",
+            "button": "Plan my launch",
+            "service": "Branding",
+            "features": [
+              "Everything in Brand identity",
+              "Menu or packaging design",
+              "Shop sign and print files",
+              "12 launch posts"
+            ]
+          },
+          {
+            "name": "Monthly social kit",
+            "style": "fav",
+            "tab": "Owners love it",
+            "icon": "phone",
+            "prefix": "",
+            "price": "Rs 25,000",
+            "suffix": "/month",
+            "desc": "On-brand posts and stories every month, designed by the team that made your brand.",
+            "button": "Ask about it",
+            "service": "Branding",
+            "features": [
+              "12 posts and 8 stories",
+              "Offers and menu updates",
+              "Captions included",
+              "One review round"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "erp",
+        "label": "ERP systems",
+        "note": "For restaurants, shops and companies that want one system for the back office.",
+        "plans": [
+          {
+            "name": "Restaurant & café",
+            "style": "plain",
+            "tab": "Custom quote",
+            "icon": "table",
+            "prefix": "",
+            "price": "Custom",
+            "suffix": "by modules",
+            "desc": "Counter, kitchen and delivery in one system, with daily cash-up.",
+            "button": "Request a quote",
+            "service": "ERP / business portal",
+            "features": [
+              "POS for tables and delivery",
+              "Kitchen tickets and order status",
+              "Recipe-based stock",
+              "Daily sales reports"
+            ]
+          },
+          {
+            "name": "Retail & pharmacy",
+            "style": "pop",
+            "tab": "Most requested",
+            "icon": "box",
+            "prefix": "",
+            "price": "Custom",
+            "suffix": "by branches",
+            "desc": "Billing, stock and suppliers across one shop or many branches.",
+            "button": "Request a quote",
+            "service": "ERP / business portal",
+            "features": [
+              "Barcode billing and receipts",
+              "Batches and expiry dates",
+              "Suppliers and purchase orders",
+              "Multi-branch reports"
+            ]
+          },
+          {
+            "name": "Custom business portal",
+            "style": "plain",
+            "tab": "Custom quote",
+            "icon": "nodes",
+            "prefix": "",
+            "price": "Custom",
+            "suffix": "by scope",
+            "desc": "For workflows that off-the-shelf software doesn't fit.",
+            "button": "Request a quote",
+            "service": "ERP / business portal",
+            "features": [
+              "Built around your process",
+              "Roles, approvals and audit trail",
+              "Accounts, HR or CRM modules",
+              "Reports and exports"
+            ]
+          },
+          {
+            "name": "ERP support plan",
+            "style": "fav",
+            "tab": "Owners love it",
+            "icon": "shield",
+            "prefix": "From",
+            "price": "Rs 15,000",
+            "suffix": "/month",
+            "desc": "Keeps your system running, backed up and improving after launch.",
+            "button": "Ask about support",
+            "service": "ERP / business portal",
+            "features": [
+              "Hosting and daily backups",
+              "Fixes and small changes",
+              "New staff training",
+              "Priority WhatsApp support"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How long does a website take?",
+      "a": "A starter site takes 7–10 days. A business website takes 2–3 weeks and an online store 4–6 weeks. Your quote gives an exact timeline."
+    },
+    {
+      "q": "Why is ERP a custom quote?",
+      "a": "The price depends on which parts you need, how many branches and users you have, and whether we move old data in. After a short call we send a fixed price for each module."
+    },
+    {
+      "q": "Do I own the website and the system?",
+      "a": "Yes. Once the final payment is made, the code, design files and your data are yours."
+    },
+    {
+      "q": "What else will I pay for?",
+      "a": "Your domain and hosting, billed at cost. Payment gateways charge their own fee per order. Everything else is in the quote."
+    },
+    {
+      "q": "Does the ERP work with more than one branch?",
+      "a": "Yes. Each branch has its own stock and staff, and the owner sees everything in one place, including on a phone."
+    },
+    {
+      "q": "Can you train my staff?",
+      "a": "Yes. Training is part of every ERP launch, in Urdu or English, at your location or online."
+    },
+    {
+      "q": "How do payments work?",
+      "a": "Usually 50% to start and 50% at launch. Larger ERP projects are split into milestones, one per module."
+    },
+    {
+      "q": "What happens after launch?",
+      "a": "You get 30 days of free fixes. After that, a monthly care or support plan is optional."
+    }
+  ],
+  "terms": {
+    "updated": "21 November 2026",
+    "body": "These terms apply to every website, branding and ERP project Laurent takes on. Your written quote sets out the scope, price and timeline for your project. If the quote and these terms differ, the quote applies.\n\n## 1. Quotes and scope\nA quote is valid for 30 days. It lists what is included. Work that is not listed in the quote is extra and is quoted separately before we start it.\n\n## 2. Payments\n- Websites and branding: 50% before work starts and 50% before launch or file handover.\n- ERP systems: paid in milestones, usually one per module, as set out in the quote.\n- Monthly plans are paid in advance at the start of each month.\n- All prices are in Pakistani rupees (PKR). Domain names, hosting, paid plugins and payment gateway fees are billed at cost.\n\n## 3. Your content and approvals\nYou provide your logo, text, photos, product lists and any data we need to move into a new system. Delays in sending content or approvals move the timeline by the same amount.\n\n## 4. Revisions\nEach plan includes the revision rounds listed in it. A revision round is one combined list of changes. Extra rounds are billed at our hourly rate.\n\n## 5. Ownership\nOnce the final payment is made, you own the website, the brand files and the ERP system built for you, along with your data. We may show the finished work in our portfolio unless you ask us not to.\n\n## 6. Support after launch\nEvery project includes 30 days of free fixes for problems in work we delivered. New features and content changes after launch are quoted separately or covered by a monthly plan.\n\n## 7. Hosting and third-party services\nWebsites and systems may rely on hosting providers, payment gateways, map or messaging services. We are not responsible for outages or changes made by those providers, but we will help you resolve them.\n\n## 8. Cancellation\nYou can cancel a project at any time by writing to us. Payments for work already done are not refundable, and you receive the files completed up to that point. Monthly plans can be cancelled with 30 days' notice.\n\n## 9. Confidentiality\nWe keep your business information, customer data and login details private and use them only for your project.\n\n## 10. Contact\nQuestions about these terms? Write to us using the contact details on this page."
+  }
+}

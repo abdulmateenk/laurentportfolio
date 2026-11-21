@@ -1,0 +1,16 @@
+{
+  "name": "laurent-services",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Laurent's services site (websites, branding, ERP) with a password-protected /manage page, for Vercel.",
+  "scripts": {
+    "dev": "node scripts/dev-server.js",
+    "hash-password": "node scripts/hash-password.js",
+    "sync-render": "node scripts/sync-render.js",
+    "check": "node scripts/check.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "@vercel/blob": "^1.1.1"
+  }
+}

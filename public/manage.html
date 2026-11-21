@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Manage site · Laurent</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --bg:#F8F8F6;
+  --white:#FFFFFF;
+  --black:#0A0A0A;
+  --panel:#141414;
+  --panel-2:#1C1C1C;
+  --text:#0A0A0A;
+  --muted:#6B6B6B;
+  --line:#E6E5E1;
+  --gold:#8A6420;
+  --gold-2:#C9A04F;
+  --gold-3:#F1DDAE;
+  --gold-soft:#F3ECDD;
+  --red:#E5484D;
+  --green:#30A46C;
+  --amber:#E5A000;
+  --sans:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --gl:max(16px, env(safe-area-inset-left,0px));
+  --gr:max(16px, env(safe-area-inset-right,0px));
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:#F3F2EE;color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold-2);outline-offset:2px;border-radius:6px}
+img{max-width:100%}
+/* ---------- Manage screen ---------- */
+#admin{position:fixed;inset:0;z-index:200;background:#F3F2EE;display:flex;flex-direction:column;font-size:15px}
+#admin[hidden]{display:none!important}
+body.v-admin{overflow:hidden}
+.ad-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-top:calc(12px + env(safe-area-inset-top,0px));padding-bottom:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));background:var(--black);color:#fff}
+.ad-top h2{font:600 17px/1.2 var(--sans);margin:0;max-width:none;letter-spacing:-.01em}
+.ad-top .st{font-size:13px;color:#BDBDBD;margin-right:auto}
+.ad-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:6px;font-weight:600;font-size:14px;background:#262626;color:#fff;transition:background .2s}
+.ad-btn:hover{background:#333}
+.ad-btn.pri{background:var(--gold)}
+.ad-btn.pri:hover{background:#74531A}
+.ad-btn.lt{background:#fff;color:var(--text);box-shadow:inset 0 0 0 1px var(--line)}
+.ad-btn.lt:hover{background:#F7F6F3}
+.ad-btn.danger{color:#B4321F}
+.ad-btn:disabled{opacity:.5;cursor:not-allowed}
+.ad-body{flex:1;min-height:0;display:grid;grid-template-columns:220px minmax(0,1fr)}
+.ad-nav{background:#fff;border-right:1px solid var(--line);padding:14px;display:flex;flex-direction:column;gap:2px;overflow:auto}
+.ad-nav button{text-align:left;padding:10px 12px;border-radius:6px;font-weight:500;color:#333}
+.ad-nav button[aria-current="true"]{background:var(--gold-soft);color:var(--gold)}
+.ad-main{overflow:auto;padding:24px max(16px,env(safe-area-inset-right,0px)) 60px 24px}
+.ad-main .wrapx{max-width:860px}
+.ad-main h3{font:600 22px/1.2 var(--sans);letter-spacing:-.02em;margin:0 0 4px}
+.ad-main .hint{color:var(--muted);margin:0 0 20px}
+.ad-card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 0 0 1px var(--line);margin-bottom:14px}
+.ad-card h4{margin:0 0 12px;font-size:15px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.ad-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ad-f{display:flex;flex-direction:column;gap:5px;min-width:0}
+.ad-f.full{grid-column:1/-1}
+.ad-f label{font-size:13px;font-weight:600;color:#333}
+.ad-f small{color:var(--muted);font-size:12.5px}
+.ad-f input,.ad-f textarea,.ad-f select{width:100%;border:1px solid var(--line);border-radius:8px;padding:10px 11px;background:#FBFAF8;font-size:14.5px;outline:none}
+.ad-f input:focus,.ad-f textarea:focus,.ad-f select:focus{border-color:var(--gold-2);background:#fff}
+.ad-f textarea{min-height:84px;resize:vertical;line-height:1.5}
+.ad-row-acts{display:flex;gap:6px}
+.ad-mini{padding:6px 9px;border-radius:6px;font-size:12.5px;font-weight:600;background:#F1F0EC;color:#333}
+.ad-mini:hover{background:#E6E4DE}
+.ad-mini.del{color:#B4321F}
+.ad-add{width:100%;padding:12px;border-radius:10px;border:1.5px dashed #CFCBC1;color:var(--gold);font-weight:600;background:transparent}
+.ad-add:hover{background:#fff}
+.ad-img{display:flex;gap:12px;align-items:center;grid-column:1/-1}
+.ad-img img{width:160px;aspect-ratio:16/10;object-fit:cover;object-position:top left;border-radius:8px;box-shadow:0 0 0 1px var(--line);background:#EEE}
+.ad-msg{min-height:1.3em;font-size:13.5px}
+.ad-msg.err{color:#B4321F}.ad-msg.ok{color:#1F7A4C}
+.ad-confirm{position:fixed;inset:0;z-index:210;background:rgba(0,0,0,.45);display:grid;place-items:center;padding:16px}
+.ad-confirm[hidden]{display:none!important}
+.ad-confirm .box{background:#fff;border-radius:14px;padding:22px;max-width:440px;width:100%}
+.ad-confirm h4{margin:0 0 8px;font-size:18px}
+.ad-confirm p{margin:0 0 18px;color:var(--muted)}
+.ad-confirm .acts{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+.ad-locked{max-width:520px;margin:60px auto;text-align:center}
+.prev-bar{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:190;display:flex;gap:10px;align-items:center;background:var(--black);color:#fff;border-radius:999px;padding:8px 8px 8px 18px;font-size:14px;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);max-width:calc(100% - 32px);flex-wrap:wrap;justify-content:center}
+.prev-bar[hidden]{display:none!important}
+.manage-link{font-size:14px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+@media (max-width:760px){
+  .ad-body{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+  .ad-nav{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);padding:8px}
+  .ad-nav button{white-space:nowrap}
+  .ad-grid{grid-template-columns:1fr}
+  .ad-main{padding-left:max(16px,env(safe-area-inset-left,0px))}
+}
+
+.ad-login{background:#fff;border-radius:14px;padding:28px;box-shadow:0 0 0 1px var(--line);text-align:center}
+.ad-login .ad-f{margin:18px 0 6px}
+</style>
+</head>
+<body>
+<div id="admin" role="main" aria-label="Manage site" hidden></div>
+<div class="ad-confirm" id="adConfirm" role="alertdialog" aria-modal="true" hidden><div class="box"><h4></h4><p></p><div class="acts"><button type="button" class="ad-btn lt" data-cancel>Cancel</button><button type="button" class="ad-btn pri" data-ok>OK</button></div></div></div>
+<noscript><p style="padding:24px">The Manage page needs JavaScript.</p></noscript>
+<script src="/assets/render.js"></script>
+<script src="/assets/backend-http.js"></script>
+<script src="/assets/admin-core.js"></script>
+</body>
+</html>
