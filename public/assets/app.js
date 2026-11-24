@@ -194,6 +194,10 @@
     var imgs = $$('.eb-view img'); ebShow(imgs.findIndex(function(im){ return im.dataset.p === b.dataset.p; })); ebPlay();
   });
 
+
+  /* ---- Pause card animations while they're off screen ---- */
+  var cardIO = ('IntersectionObserver' in window) ? new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle('onscreen', e.isIntersecting); }); }, { rootMargin: '100px 0px' }) : null;
+  function watchCards(){ $$('.svc').forEach(function(c){ if (cardIO) cardIO.observe(c); else c.classList.add('onscreen'); }); }
   /* ---- Quote builder ---- */
   var form = $('#qform'), sumText = $('#sumText'), waBtn = $('#waBtn'), msg = $('#sumMsg'), planSel = $('#q-plan');
   var val = function(id){ return ($(id).value || '').trim(); };
@@ -253,7 +257,7 @@
 
   /* ---- Re-run after content changes (live preview from the Manage screen) ---- */
   function refresh(){
-    moveKnob(); ebShow(0); ebPlay(); startTypers(); sizeScans();
+    moveKnob(); ebShow(0); ebPlay(); startTypers(); sizeScans(); watchCards();
     var s = (form.querySelector('input[name="service"]:checked') || {}).value; if (s) setService(s, val('#q-plan')); else build();
   }
   window.LApp = { refresh: refresh, setService: setService };
