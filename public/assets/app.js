@@ -43,11 +43,15 @@
   });
 
   /* ---- Load sequence ---- */
-  requestAnimationFrame(function(){ requestAnimationFrame(function(){
+  /* Intro (logo animation) plays first on a visitor's first page in a session, then the hero animates in */
+  var introOn = document.documentElement.classList.contains('intro');
+  function startHero(){
     $$('.hero h1>*, .hero-sub, .hero-ctas, .trust>*').forEach(function(el, i){ el.style.transitionDelay = (.1 + i * .07) + 's'; });
     $('.panel').style.transitionDelay = '.35s';
     document.documentElement.classList.remove('ld');
-  }); });
+  }
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ setTimeout(startHero, introOn ? 1750 : 0); }); });
+  if (introOn) setTimeout(function(){ var el = $('#intro'); if (el) el.remove(); document.documentElement.classList.remove('intro'); }, 2700);
 
   /* ---- Rotating hero line ---- */
   if (!reduce) {
