@@ -105,18 +105,16 @@ window.LR = (function(){
         '<div class="rcards">' + dish('photos/og-b1.webp', 'd1', 'OG Smash', 'Rs 950') + dish('photos/og-b2.webp', 'd1', 'Grill Classic', 'Rs 1,150') + dish('photos/og-ch.webp', 'd4', 'Crispy chicken', 'Rs 850') + '</div></div>';
     },
     brand: function(){
-      /* Brand kit for a sample bakery: primary logo, secondary logo, colours and mockups */
-      var mark = function(fg, acc){ return '<svg class="kbm" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="' + fg + '" stroke-width="1.6"/><path d="M15 11v18M15 20.5l8.5-9.5M17.8 18l6.2 11" fill="none" stroke="' + fg + '" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 12.5c-2.2.4-3.4 1.8-3.4 3.8 2.1-.2 3.3-1.6 3.4-3.8zM29.5 17c-2 .2-3.1 1.4-3.1 3.2 1.9-.1 3-1.3 3.1-3.2z" fill="' + acc + '"/></svg>'; };
+      /* Brand kit: the client's real logos, colour kit and photo mockups (photos/ next to the page) */
+      var im = function(n, cls, w, h){ return '<img class="' + (cls || '') + '" src="photos/' + n + '.webp" alt="" loading="lazy" width="' + w + '" height="' + h + '" onerror="this.remove()">'; };
       var sw = function(c, n, dark){ return '<span class="kbs" style="background:' + c + (dark ? ';color:#fff' : '') + '"><b>' + n + '</b>' + c + '</span>'; };
+      var mk = [['cup', 'Coffee cup'], ['bag', 'Takeaway bag'], ['card', 'Business card'], ['tote', 'Tote bag']];
       return '<div class="kb">' +
-        '<div class="kbr2"><div class="kbt kbp"><small>Primary logo</small><div class="kbl">' + mark('#6B1E2E', '#C9A04F') + '<span><b>Kiran</b>BAKERS</span></div></div>' +
-        '<div class="kbt kbsec"><small>Secondary</small><div class="kbl2">' + mark('#F6EBDD', '#C9A04F') + '<b>KB</b></div></div></div>' +
-        '<div class="kbt kbc"><small>Colour kit</small><div class="kbsw">' + sw('#6B1E2E', 'Maroon', 1) + sw('#C9A04F', 'Gold') + sw('#F6EBDD', 'Cream') + sw('#1E1A18', 'Cocoa', 1) + '</div></div>' +
-        '<div class="kbt kbm3"><small>Mockups</small><div class="kbmk">' +
-          '<span class="mk-card"><i class="mk-c1">' + mark('#F6EBDD', '#C9A04F') + '</i><i class="mk-c2"><b>Kiran Bakers</b>Since 1998 · Karachi</i></span>' +
-          '<span class="mk-cup"><i>' + mark('#6B1E2E', '#C9A04F') + '</i></span>' +
-          '<span class="mk-bag"><i>' + mark('#F6EBDD', '#C9A04F') + '<b>Kiran Bakers</b></i></span>' +
-        '</div></div></div>';
+        '<div class="kbr2"><div class="kbt kbimg"><small>Primary logo</small>' + im('kit-primary', '', 400, 214) + '</div>' +
+        '<div class="kbt kbimg kbsec2"><small>Secondary</small>' + im('kit-secondary', '', 219, 236) + '</div></div>' +
+        '<div class="kbt kbc"><small>Colour kit</small><div class="kbsw">' + sw('#470809', 'Maroon', 1) + sw('#FFFFFF', 'White') + sw('#86664A', 'Kraft', 1) + sw('#141414', 'Ink', 1) + '</div></div>' +
+        '<div class="kbt kbmocks"><div class="kbsl" aria-hidden="true">' + mk.map(function(m){ return '<figure>' + im('kit-' + m[0], '', 560, 316) + '<figcaption>' + m[1] + '</figcaption></figure>'; }).join('') + '</div><small class="kbtag">Mockups</small><span class="rdots kbdots"><i></i><i></i><i></i><i></i></span></div>' +
+        '</div>';
     },
     erp: function(s){ return '<div class="br erpshot"><div class="b"><i></i><i></i><i></i></div><div class="ev"><span class="scan" aria-hidden="true"></span><img src="' + esc(s.img) + '" alt="' + esc(s.title) + ' dashboard example" loading="lazy" width="1400" height="875"></div></div>'; },
     portal: function(){ return '<div class="nodes"><svg viewBox="0 0 250 190" preserveAspectRatio="none" aria-hidden="true"><path class="flow" d="M30 95 C110 95 120 30 190 30 M30 95 L190 95 M30 95 C110 95 120 160 190 160" fill="none" stroke="#D9D6CE" stroke-width="1.2"/></svg><span class="hub">' + MK + '</span><span class="ch" style="top:16%"><i></i>Orders</span><span class="ch" style="top:50%"><i></i>Invoices</span><span class="ch" style="top:84%"><i></i>Approvals</span></div>'; }

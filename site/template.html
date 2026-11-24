@@ -828,6 +828,31 @@ ul.ind-grid{grid-template-columns:repeat(3,max-content);column-gap:clamp(24px,3v
 .svc:hover .mk-card{transform:rotate(-12deg) translate(-4px,-2px)}
 .svc:hover .mk-cup{transform:translateY(-4px)}
 .svc:hover .mk-bag{transform:rotate(4deg) translate(3px,-2px)}
+
+/* ================= Branding card v2: real logos + photo mockups ================= */
+.kbimg{padding:0;background:#470809}
+.kbimg small{position:absolute;z-index:2;left:7px;top:6px;margin:0;color:rgba(255,255,255,.75)}
+.kbimg img{display:block;width:100%;height:68px;object-fit:cover}
+.kbsec2{background:#F6EEE2}
+.kbsec2 small{color:rgba(71,8,9,.55)}
+.kbsec2 img{object-fit:contain;padding:12px 6px 4px;box-sizing:border-box}
+.kbmocks{padding:0;height:150px;background:#ddd}
+.kbsl{position:absolute;inset:0}
+.kbsl figure{position:absolute;inset:0;margin:0;opacity:0;animation:kbSlide 14s infinite}
+.kbsl figure:nth-child(2){animation-delay:3.5s}.kbsl figure:nth-child(3){animation-delay:7s}.kbsl figure:nth-child(4){animation-delay:10.5s}
+.kbsl img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:kbZoom 14s infinite;animation-delay:inherit}
+.kbsl figcaption{position:absolute;left:7px;bottom:7px;font:700 7.5px/1 var(--sans);color:#fff;background:rgba(10,10,10,.55);backdrop-filter:blur(4px);padding:4px 6px;border-radius:4px}
+@keyframes kbSlide{0%{opacity:0}4%,25%{opacity:1}29%,100%{opacity:0}}
+@keyframes kbZoom{0%{transform:scale(1.1)}29%{transform:scale(1)}100%{transform:scale(1)}}
+.kbtag{position:absolute;z-index:2;left:7px;top:6px;margin:0!important;color:#fff!important;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.kbdots{z-index:2}
+.kbdots i{animation:kbDot 14s infinite}
+.kbdots i:nth-child(2){animation-delay:3.5s}.kbdots i:nth-child(3){animation-delay:7s}.kbdots i:nth-child(4){animation-delay:10.5s}
+@keyframes kbDot{0%,25%{width:12px;background:#fff}26%,100%{width:4px;background:rgba(255,255,255,.45)}}
+.kbs{height:30px}
+.svc:hover .kbmocks{box-shadow:0 0 0 1px var(--line),0 20px 34px -18px rgba(0,0,0,.45)}
+@media (prefers-reduced-motion: reduce){.kbsl figure{animation:none}.kbsl figure:first-child{opacity:1}.kbsl img,.kbdots i{animation:none}}
+.kbimg img{height:74px;object-fit:contain;padding-top:14px;box-sizing:border-box}
 </style>
 <!--HEAD-END-->
 <a class="skip" href="#main">Skip to content</a>
