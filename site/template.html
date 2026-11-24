@@ -639,6 +639,26 @@ ul.ind-grid{grid-template-columns:repeat(3,max-content);column-gap:clamp(24px,3v
   ul.ind-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px;row-gap:16px}
   .ind-grid li{padding:0;font-size:15px;gap:8px}
 }
+
+/* ================= Gradient visible on first view ================= */
+/* A warm gold wash + grain behind the headline so the texture is there the moment the page opens */
+.hero{isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0 0 auto;height:min(100%,900px);z-index:0;pointer-events:none;
+  background:
+    radial-gradient(48% 60% at 96% 8%,rgba(224,184,104,.38),rgba(224,184,104,0) 70%),
+    radial-gradient(38% 46% at 70% 62%,rgba(201,160,79,.20),rgba(201,160,79,0) 70%),
+    radial-gradient(30% 40% at 4% 0%,rgba(241,221,174,.45),rgba(241,221,174,0) 70%)}
+.hero::after{content:"";position:absolute;inset:0 0 auto;height:min(100%,900px);z-index:0;pointer-events:none;opacity:.16;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero > .wrap,.hero > .panel{position:relative;z-index:1}
+/* Tighter hero so the dark-gold panel starts inside the first screen */
+.hero{padding-top:calc(104px + env(safe-area-inset-top,0px))}
+.hero-grid{row-gap:clamp(20px,2.2vw,32px)}
+.hero-ctas{margin-top:22px}
+.panel{padding-top:96px!important}
+.panel .bgx,.panel .grain{-webkit-mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.5) 30px,#000 90px);mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.5) 30px,#000 90px)}
+@media (max-width:1000px){.panel{padding-top:84px!important}}
+@media (max-width:640px){.hero{padding-top:calc(92px + env(safe-area-inset-top,0px))}.panel{padding-top:72px!important}.hero-sub{font-size:15.5px}}
 </style>
 <!--HEAD-END-->
 <a class="skip" href="#main">Skip to content</a>
