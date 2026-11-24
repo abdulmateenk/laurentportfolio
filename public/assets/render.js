@@ -90,7 +90,7 @@ window.LR = (function(){
       var ph = function(n, w, h){ return '<img src="/photos/' + n + '.webp" alt="" loading="lazy" width="' + w + '" height="' + h + '" onerror="this.remove()">'; };
       var svc = function(n, t){ return '<div class="ivs"><span class="ivp">' + ph(n, 200, 150) + '</span><b>' + t + '</b></div>'; };
       return '<div class="br ivc"><div class="b"><i></i><i></i><i></i><span class="url">ivcon.com.pk</span></div>' +
-        '<div class="ivh"><span class="ivl"><i>IV</i><span>IvCon<small>Corporation</small></span></span><span class="ivn">About</span><span class="ivn">Services</span><em class="ivbtn">Contact us</em></div>' +
+        '<div class="ivh"><span class="ivl"><span>IvCon<small>Corporation</small></span></span><span class="ivn">About</span><span class="ivn">Services</span><em class="ivbtn">Contact us</em></div>' +
         '<div class="ivhero"><span class="ivp">' + ph('iv-hero', 560, 300) + '</span><div class="ivtx"><small>Engineering · Construction</small><span class="type" data-text="Building what Pakistan runs on.">Building what Pakistan runs on.</span></div></div>' +
         '<div class="ivab"><span class="ivp">' + ph('iv-about', 240, 180) + '</span><div><small>About us</small><b>20 years, 140+ projects delivered</b><i></i><i></i></div></div>' +
         '<div class="ivsv"><small>Our services</small><div class="ivg">' + svc('iv-build', 'Construction') + svc('iv-estate', 'Real estate') + svc('iv-consult', 'Consulting') + '</div></div>' +
