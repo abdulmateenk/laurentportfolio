@@ -552,6 +552,83 @@ body:not(.v-terms) #terms-view{display:none}
 .stat b{font-size:clamp(34px,3.3vw,50px)}
 @media (max-width:1000px){.panel .in{grid-template-columns:1fr}.panel{padding-top:150px}}
 @media (max-width:1000px){.panel{padding-top:220px!important}}
+
+/* ================= Hero v2: copy + business tiles + live ERP screen ================= */
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:end}
+.hero-copy h1{max-width:15ch}
+.hero-sub{margin:20px 0 0;max-width:50ch;font-size:clamp(16px,1.25vw,18px);line-height:1.6;color:#4A4A4A}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.hero-ctas .btn{height:48px;padding:0 22px;font-weight:600;border-radius:10px;box-shadow:0 14px 30px -16px rgba(138,100,32,.8)}
+.btn.ghost{background:transparent;color:var(--text,#0A0A0A);box-shadow:inset 0 0 0 1.5px #D9D6CE!important}
+.btn.ghost:hover{background:#fff;box-shadow:inset 0 0 0 1.5px #0A0A0A!important}
+.btn.ghost::after{content:none}
+
+ul.ind-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0}
+.ind-grid li{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:16px;background:#fff;border:1px solid #E6E5E1;border-radius:14px;
+  font:600 15px/1.2 var(--sans);letter-spacing:-.015em;color:#1A1A1A;box-shadow:0 1px 2px rgba(0,0,0,.03);
+  transition:opacity 1s var(--ease),transform .5s var(--ease),filter 1s var(--ease),border-color .3s,box-shadow .4s}
+.ind-grid li:hover{transform:translateY(-3px);border-color:#E7D3A8;box-shadow:0 18px 30px -20px rgba(138,100,32,.45)}
+.ind-ic{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:#F3ECDD;color:#8A6420;transition:background .3s,color .3s}
+.ind-ic svg{width:20px;height:20px}
+.ind-grid li:hover .ind-ic{background:#0A0A0A;color:#C9A04F}
+.ind-n{overflow-wrap:anywhere}
+.ld .hero-sub,.ld .hero-ctas{opacity:0;transform:translateY(22px);filter:blur(8px)}
+.hero-sub,.hero-ctas{transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease)}
+
+/* Panel: numbers on the left, a real system screen on the right */
+.panel{padding-top:150px}
+.panel .in{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;gap:clamp(28px,4vw,64px)}
+.hero-shot{margin:0;border-radius:14px;overflow:hidden;background:#0F0F0F;box-shadow:0 40px 80px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.08);
+  transform:perspective(1600px) rotateY(-7deg) rotateX(3deg);transform-origin:left center;transition:transform 1s var(--ease)}
+.hero-shot:hover{transform:perspective(1600px) rotateY(0) rotateX(0)}
+.hs-bar{display:flex;align-items:center;gap:6px;padding:10px 12px;background:#161616;border-bottom:1px solid rgba(255,255,255,.06)}
+.hs-bar i{width:9px;height:9px;border-radius:50%;background:#333}
+.hs-bar i:first-child{background:#C9A04F}
+.hs-bar span{margin-left:8px;font:500 12px/1 var(--mono,monospace);color:rgba(255,255,255,.55);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hero-shot img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top left}
+
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero-copy h1{max-width:none}
+  .panel{padding-top:130px!important}
+  .panel .in{grid-template-columns:1fr}
+  .hero-shot{transform:none}
+}
+@media (max-width:640px){
+  ul.ind-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .ind-grid li{flex-direction:row;align-items:center;gap:10px;padding:12px;font-size:14px;border-radius:12px}
+  .ind-ic{width:32px;height:32px;border-radius:8px;flex:none}
+  .ind-ic svg{width:17px;height:17px}
+  .hero-ctas .btn{flex:1 1 auto}
+  .panel{padding-top:110px!important}
+}
+@media (prefers-reduced-motion: reduce){.hero-shot{transform:none}.ld .hero-sub,.ld .hero-ctas{opacity:1;transform:none;filter:none}}
+
+/* ================= Header: logo, menu and quote button share one height ================= */
+.nav{align-items:center}
+.nav-r{align-items:center;gap:8px}
+.logo,.links,.menu-btn,.nav-cta{height:48px;box-sizing:border-box;border-radius:10px}
+.logo{display:inline-flex;align-items:center;padding:0 18px}
+.logo svg{height:20px}
+.logo .lg-mark{fill:#fff}
+.links{padding:0 6px;align-items:center}
+.links a:not(.btn){padding:9px 12px;border-radius:7px}
+.menu-btn,.nav-cta{display:inline-flex;align-items:center;justify-content:center;padding:0 18px;font-size:14px;line-height:1}
+.menu-btn{display:none;font-weight:600}
+@media (max-width:860px){ .menu-btn{display:inline-flex} .links.open{height:auto;top:72px} }
+@media (max-width:400px){
+  .logo,.menu-btn,.nav-cta{height:42px}
+  .logo{padding:0 12px} .logo svg{height:17px}
+  .menu-btn,.nav-cta{padding:0 12px;font-size:13px}
+  .links.open{top:64px}
+}
+/* Headline across the full width, intro + buttons beside the business tiles */
+.hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);grid-template-areas:"h h" "c t";row-gap:clamp(28px,3vw,44px)}
+.hero-grid h1{grid-area:h}
+.hero-copy{grid-area:c;align-self:center}
+.hero-grid .ind-grid{grid-area:t}
+.hero-sub{margin-top:0}
+@media (max-width:1000px){.hero-grid{grid-template-columns:1fr;grid-template-areas:"h" "c" "t"}}
 </style>
 <!--HEAD-END-->
 <a class="skip" href="#main">Skip to content</a>

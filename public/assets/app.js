@@ -44,7 +44,7 @@
 
   /* ---- Load sequence ---- */
   requestAnimationFrame(function(){ requestAnimationFrame(function(){
-    $$('.hero h1>*, .trust>*').forEach(function(el, i){ el.style.transitionDelay = (.1 + i * .07) + 's'; });
+    $$('.hero h1>*, .hero-sub, .hero-ctas, .trust>*').forEach(function(el, i){ el.style.transitionDelay = (.1 + i * .07) + 's'; });
     $('.panel').style.transitionDelay = '.35s';
     document.documentElement.classList.remove('ld');
   }); });
