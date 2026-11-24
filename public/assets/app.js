@@ -198,6 +198,26 @@
   /* ---- Pause card animations while they're off screen ---- */
   var cardIO = ('IntersectionObserver' in window) ? new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle('onscreen', e.isIntersecting); }); }, { rootMargin: '100px 0px' }) : null;
   function watchCards(){ $$('.svc').forEach(function(c){ if (cardIO) cardIO.observe(c); else c.classList.add('onscreen'); }); }
+
+  /* ---- Photo sliders (OG Burgers, IvCon, brand mockups): one slide shown at a time, driven here so they work on every phone ---- */
+  function startSliders(){
+    $$('.rslides, .ivsl, .kbsl').forEach(function(box){
+      if (box.dataset.sl) return; box.dataset.sl = '1';
+      var slides = [].slice.call(box.children); if (!slides.length) return;
+      var root = box.closest('.rhero, .ivhero, .kbmocks') || box.parentElement;
+      var dots = root ? [].slice.call(root.querySelectorAll('.rdots i')) : [];
+      slides.forEach(function(s){ var im = s.tagName === 'IMG' ? s : s.querySelector('img'); if (im) im.loading = 'eager'; });
+      var i = 0, every = box.classList.contains('kbsl') ? 3500 : 4000;
+      function show(n){ slides.forEach(function(s, k){ s.classList.toggle('on', k === n); }); dots.forEach(function(d, k){ d.classList.toggle('on', k === n); }); }
+      show(0);
+      if (reduce || slides.length < 2) return;
+      setInterval(function(){
+        if (document.hidden) return;
+        var r = box.getBoundingClientRect(); if (r.bottom < -100 || r.top > innerHeight + 100) return;
+        i = (i + 1) % slides.length; show(i);
+      }, every);
+    });
+  }
   /* ---- Quote builder ---- */
   var form = $('#qform'), sumText = $('#sumText'), waBtn = $('#waBtn'), msg = $('#sumMsg'), planSel = $('#q-plan');
   var val = function(id){ return ($(id).value || '').trim(); };
@@ -257,7 +277,7 @@
 
   /* ---- Re-run after content changes (live preview from the Manage screen) ---- */
   function refresh(){
-    moveKnob(); ebShow(0); ebPlay(); startTypers(); sizeScans(); watchCards();
+    moveKnob(); ebShow(0); ebPlay(); startTypers(); sizeScans(); watchCards(); startSliders();
     var s = (form.querySelector('input[name="service"]:checked') || {}).value; if (s) setService(s, val('#q-plan')); else build();
   }
   window.LApp = { refresh: refresh, setService: setService };
