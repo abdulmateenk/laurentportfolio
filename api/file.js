@@ -1,8 +1,11 @@
 /* GET /api/file?p=uploads/... : serves an uploaded image when the Blob store is private. */
 const store = require('../lib/store');
+const photo = require('../lib/photo');
 
 module.exports = async (req, res) => {
-  const p = new URL(req.url, 'http://x').searchParams.get('p') || '';
+  const q = new URL(req.url, 'http://x').searchParams;
+  if (q.get('n')) return photo(req, res, q.get('n'));
+  const p = q.get('p') || '';
   try {
     const r = await store.openUpload(p);
     if (!r || !r.stream) { res.statusCode = 404; return res.end('Not found'); }

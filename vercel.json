@@ -21,7 +21,7 @@
     },
     {
       "source": "/photos/:n",
-      "destination": "/api/photo?n=:n"
+      "destination": "/api/file?n=:n"
     }
   ],
   "functions": {

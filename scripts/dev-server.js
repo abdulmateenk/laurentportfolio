@@ -11,7 +11,7 @@ const PORT = +process.env.PORT || 3000;
 http.createServer((req, res) => {
   const u = new URL(req.url, 'http://localhost');
   let p = u.pathname;
-  if (p.startsWith('/photos/')) { req.url = '/api/photo?n=' + encodeURIComponent(p.slice(8)); p = '/api/photo'; }
+  if (p.startsWith('/photos/')) { req.url = '/api/file?n=' + encodeURIComponent(p.slice(8)); p = '/api/file'; }
   if (routes[p]) { req.url = '/api/' + routes[p][0] + (routes[p][1] ? '?' + routes[p][1] : ''); p = '/api/' + routes[p][0]; }
   if (p.startsWith('/api/')) {
     const f = path.join(__dirname, '..', 'api', p.slice(5).replace(/[^a-z]/g, '') + '.js');
