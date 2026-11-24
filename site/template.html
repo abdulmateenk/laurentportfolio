@@ -870,6 +870,16 @@ footer{overflow:visible}
 .fgrad,.fgrad{margin:28px calc(10px - var(--gr)) 0 calc(10px - var(--gl))}
 @media (min-width:900px){.fgrad{margin-left:calc(10px - var(--gl));margin-right:calc(10px - var(--gr))}}
 .fgrad i{-webkit-mask-image:none;mask-image:none}
+/* Footer band = the hero panel's gradient, blending up out of the light footer the same way */
+.fgrad{height:280px;border-radius:0;margin-top:0}
+.fgrad i{background:
+   radial-gradient(55% 70% at 92% 92%,rgba(224,184,104,.85) 0%,rgba(201,154,69,.45) 32%,rgba(138,100,32,0) 64%),
+   radial-gradient(40% 60% at 60% 110%,rgba(92,66,24,.7),rgba(92,66,24,0) 70%),
+   linear-gradient(100deg,#0B0B0B 0%,#15110B 34%,#3E2D12 62%,#7A5821 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,transparent 20px,rgba(0,0,0,.45) 100px,#000 230px)!important;mask-image:linear-gradient(180deg,transparent 0,transparent 20px,rgba(0,0,0,.45) 100px,#000 230px)!important}
+.fgrad::after{-webkit-mask-image:linear-gradient(180deg,transparent 0,transparent 20px,rgba(0,0,0,.45) 100px,#000 230px);mask-image:linear-gradient(180deg,transparent 0,transparent 20px,rgba(0,0,0,.45) 100px,#000 230px)}
+@media (max-width:640px){.fgrad{height:200px;border-radius:0}
+  .fgrad i,.fgrad::after{-webkit-mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.45) 70px,#000 160px)!important;mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.45) 70px,#000 160px)!important}}
 </style>
 <!--HEAD-END-->
 <a class="skip" href="#main">Skip to content</a>
