@@ -65,7 +65,7 @@
     "projects": [
       {
         "id": "w",
-        "name": "Wrapline ERP",
+        "name": "Car Care ERP",
         "sub": "Car PPF studio · In progress"
       },
       {
@@ -77,21 +77,21 @@
     "slides": [
       {
         "p": "w",
-        "label": "Wrapline ERP · Dashboard",
-        "src": "/img/erp-wrapline-dash.webp",
-        "alt": "Wrapline ERP dashboard with revenue by month, division margins and car brands served"
+        "label": "Car Care ERP · Dashboard",
+        "src": "/img/erp-carcare-dash.webp",
+        "alt": "Car Care ERP dashboard with revenue by month, division margins and car brands served"
       },
       {
         "p": "w",
-        "label": "Wrapline ERP · PPF roll tracker",
-        "src": "/img/erp-wrapline-rolls.webp",
-        "alt": "Wrapline ERP PPF roll tracker showing film left on each roll"
+        "label": "Car Care ERP · PPF roll tracker",
+        "src": "/img/erp-carcare-rolls.webp",
+        "alt": "Car Care ERP PPF roll tracker showing film left on each roll"
       },
       {
         "p": "w",
-        "label": "Wrapline ERP · Financials",
-        "src": "/img/erp-wrapline-financials.webp",
-        "alt": "Wrapline ERP profit and loss by PPF, parts and tyres"
+        "label": "Car Care ERP · Financials",
+        "src": "/img/erp-carcare-financials.webp",
+        "alt": "Car Care ERP profit and loss by PPF, parts and tyres"
       },
       {
         "p": "a",
