@@ -629,6 +629,16 @@ ul.ind-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;
 .hero-grid .ind-grid{grid-area:t}
 .hero-sub{margin-top:0}
 @media (max-width:1000px){.hero-grid{grid-template-columns:1fr;grid-template-areas:"h" "c" "t"}}
+/* Business types: back to the plain style (letter badge + name), kept in an even grid */
+ul.ind-grid{grid-template-columns:repeat(3,max-content);column-gap:clamp(24px,3vw,44px);row-gap:22px;align-self:center;justify-content:start}
+.ind-grid li{flex-direction:row;align-items:center;gap:9px;padding:0;background:none;border:0;border-radius:0;box-shadow:none;
+  font:600 clamp(15px,1.5vw,19px)/1 var(--sans);letter-spacing:-.02em;color:#2A2A2A}
+.ind-grid li:hover{transform:none;border:0;box-shadow:none}
+.ind-grid li i{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:5px;background:#2A2A2A;color:#fff;font:600 11px/1 var(--sans);font-style:normal;flex:none}
+@media (max-width:640px){
+  ul.ind-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px;row-gap:16px}
+  .ind-grid li{padding:0;font-size:15px;gap:8px}
+}
 </style>
 <!--HEAD-END-->
 <a class="skip" href="#main">Skip to content</a>

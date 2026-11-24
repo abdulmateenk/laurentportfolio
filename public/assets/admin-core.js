@@ -79,7 +79,7 @@
         '<div class="ad-card"><div class="ad-grid">' +
         f('First line', 'hero.line1', { full: true }) +
         f('Rotating second lines', 'hero.rotate', { lines: true, full: true, help: 'One per line. They take turns under the first line.' }) +
-        f('Business types', 'hero.industries', { lines: true, full: true, help: 'One per line. Six looks best (3 across on laptops, 2 across on phones). Icons are picked from the name.' }) +
+        f('Business types', 'hero.industries', { lines: true, full: true, help: 'One per line. Six looks best (3 across on laptops, 2 across on phones).' }) +
         f('Intro text', 'hero.text', { area: true, full: true }) + f('Main button', 'hero.button') +
         '</div></div>' +
         h.stats.map(function(s, i){ return '<div class="ad-card"><h4>Number ' + (i + 1) + rowActs('hero.stats', i, h.stats.length) + '</h4><div class="ad-grid">' + f('Value', 'hero.stats.' + i + '.value', { help: 'For example Rs 35k or 30 days.' }) + f('Label', 'hero.stats.' + i + '.label') + '</div></div>'; }).join('') +
