@@ -190,20 +190,6 @@
     var imgs = $$('.eb-view img'); ebShow(imgs.findIndex(function(im){ return im.dataset.p === b.dataset.p; })); ebPlay();
   });
 
-  /* ---- Footer pixels ---- */
-  var cv = $('#pxf');
-  function drawPx(){
-    var dpr = Math.min(devicePixelRatio || 1, 2), w = cv.clientWidth, h = cv.clientHeight; if (!w) return;
-    cv.width = w * dpr; cv.height = h * dpr;
-    var c = cv.getContext('2d'); c.scale(dpr, dpr); c.clearRect(0, 0, w, h);
-    var s = 26, seed = 7, rnd = function(){ return (seed = (seed * 9301 + 49297) % 233280) / 233280; };
-    for (var x = 0; x < w; x += s) for (var y = 0; y < h; y += s) {
-      var t = y / h;
-      if (rnd() < t * 0.95) { var g = Math.round(235 - t * 95 - rnd() * 20); c.fillStyle = 'rgb(' + g + ',' + (g - 1) + ',' + (g - 4) + ')'; c.fillRect(x + 1, y + 1, s - 2, s - 2); }
-    }
-  }
-  drawPx(); addEventListener('resize', drawPx);
-
   /* ---- Quote builder ---- */
   var form = $('#qform'), sumText = $('#sumText'), waBtn = $('#waBtn'), msg = $('#sumMsg'), planSel = $('#q-plan');
   var val = function(id){ return ($(id).value || '').trim(); };
