@@ -127,9 +127,9 @@
 
   /* ---- Store card: cart count bumps on hover ---- */
   document.addEventListener('mouseover', function(e){
-    var p = e.target.closest && e.target.closest('.shop .p'); if (!p || p.dataset.bumped) return;
+    var p = e.target.closest && e.target.closest('.shop .p, .rest .rp'); if (!p || p.dataset.bumped) return;
     p.dataset.bumped = '1'; setTimeout(function(){ delete p.dataset.bumped; }, 1200);
-    var n = p.parentElement.querySelector('.cartn'); if (!n) return;
+    var n = (p.closest('.shop, .rest') || p.parentElement).querySelector('.cartn'); if (!n) return;
     n.textContent = (+n.textContent % 9) + 1; n.classList.add('bump'); setTimeout(function(){ n.classList.remove('bump'); }, 350);
   });
 

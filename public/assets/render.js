@@ -82,7 +82,13 @@ window.LR = (function(){
   }
 
   var ART = {
-    web: function(){ return '<div class="br"><div class="b"><i></i><i></i><i></i></div><div class="c"><div class="hero-b"><span class="type" data-text="Fresh every morning, delivered by noon.">Fresh every morning, delivered by noon.</span></div><div class="l" style="width:70%"></div><div class="l" style="width:45%"></div><div class="row"><i></i><i></i><i></i></div></div></div>'; },
+    web: function(){
+      var dish = function(cls, name, price){ return '<div class="rp"><i class="dish ' + cls + '"></i><b>' + name + '</b><span class="rpr">' + price + '<em class="radd">+</em></span></div>'; };
+      return '<div class="br rest"><div class="b"><i></i><i></i><i></i><span class="url">embergrill.pk/menu</span></div>' +
+        '<div class="rh"><span class="rl"><i></i>Ember Grill</span><span class="rn">Menu</span><span class="rn">Deals</span><span class="rcart"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 5h10l-1 9H4zM6 5V4a2 2 0 014 0v1" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><b class="cartn">2</b></span></div>' +
+        '<div class="rhero"><div><small>Open till 1 am · Free delivery</small><span class="type" data-text="Hot off the grill, at your door in 30 min.">Hot off the grill, at your door in 30 min.</span><em class="rbtn">Order now</em></div><i class="dish d0"></i></div>' +
+        '<div class="rcards">' + dish('d1', 'Smash burger', 'Rs 950') + dish('d2', 'Chicken karahi', 'Rs 1,850') + dish('d3', 'Fudge shake', 'Rs 650') + '</div></div>';
+    },
     store: function(){ return '<div class="shop"><div class="cart">Cart <b class="cartn">3</b></div><div class="p"><i></i><b>Brass vase</b>Rs 4,500<span class="add">+ Add</span></div><div class="p"><i></i><b>Wall clock</b>Rs 6,200<span class="add">+ Add</span></div></div>'; },
     brand: function(){ return '<div class="ba"><div class="bf"><span>Shop Name</span></div><div class="af"><div class="mk"><i>K</i><b>Kiran Bakers</b></div></div><em class="e1">BEFORE</em><em class="e2">AFTER</em><span class="div"></span></div>'; },
     erp: function(s){ return '<div class="br erpshot"><div class="b"><i></i><i></i><i></i></div><div class="ev"><span class="scan" aria-hidden="true"></span><img src="' + esc(s.img) + '" alt="' + esc(s.title) + ' dashboard example" loading="lazy" width="1400" height="875"></div></div>'; },

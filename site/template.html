@@ -659,6 +659,58 @@ ul.ind-grid{grid-template-columns:repeat(3,max-content);column-gap:clamp(24px,3v
 .panel .bgx,.panel .grain{-webkit-mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.5) 30px,#000 90px);mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.5) 30px,#000 90px)}
 @media (max-width:1000px){.panel{padding-top:84px!important}}
 @media (max-width:640px){.hero{padding-top:calc(92px + env(safe-area-inset-top,0px))}.panel{padding-top:72px!important}.hero-sub{font-size:15.5px}}
+
+/* ================= Websites card: a real-looking restaurant site ================= */
+.br.rest{max-width:280px;text-align:left}
+.rest .b{align-items:center}
+.rest .b .url{margin-left:8px;flex:1;background:#F3F2EF;border-radius:5px;padding:3px 8px;font:500 8.5px/1.2 var(--mono);color:#8A8A8A;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rh{display:flex;align-items:center;gap:9px;padding:8px 10px;border-bottom:1px solid #F0EEE9;font:500 9.5px/1 var(--sans);color:#555}
+.rh .rl{display:flex;align-items:center;gap:5px;font:800 11px/1 var(--sans);letter-spacing:-.02em;color:#1A1A1A;margin-right:auto}
+.rh .rl i{width:12px;height:12px;border-radius:4px;background:radial-gradient(circle at 35% 35%,#FFB26B,#E2572B 60%,#9E2A12)}
+.rcart{position:relative;display:grid;place-items:center;width:22px;height:22px;border-radius:7px;background:#1A1A1A;color:#fff}
+.rcart svg{width:12px;height:12px}
+.rcart .cartn{position:absolute;top:-5px;right:-6px;min-width:13px;height:13px;border-radius:7px;background:#E2572B;color:#fff;font:700 8px/13px var(--sans);text-align:center;padding:0 3px;transition:transform .4s var(--ease)}
+.rcart .cartn.bump{transform:scale(1.45)}
+.rhero{position:relative;margin:9px 10px 0;height:84px;border-radius:9px;overflow:hidden;display:flex;align-items:center;padding:10px;color:#fff;
+  background:radial-gradient(70% 120% at 100% 50%,rgba(226,87,43,.55),transparent 60%),linear-gradient(115deg,#1B120C,#3A1D10 60%,#6B2F14)}
+.rhero>div{position:relative;z-index:1;display:flex;flex-direction:column;gap:5px;max-width:62%}
+.rhero small{font:600 7.5px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:#FFC79A}
+.rhero .type{font:700 11.5px/1.18 var(--sans);letter-spacing:-.02em;min-height:2.36em}
+.rbtn{align-self:flex-start;font:700 8.5px/1 var(--sans);font-style:normal;background:#E2572B;color:#fff;padding:5px 8px;border-radius:5px;box-shadow:0 6px 14px -6px rgba(226,87,43,.9)}
+.rhero .dish.d0{position:absolute;right:-14px;top:50%;width:84px;height:84px;margin-top:-42px;animation:dishSpin 18s linear infinite}
+.rcards{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:9px 10px 11px}
+.rp{border:1px solid #EFEDE8;border-radius:8px;padding:6px;display:flex;flex-direction:column;gap:3px;background:#fff;transition:transform .45s var(--ease),box-shadow .45s,border-color .3s}
+.rp .dish{display:block;width:100%;aspect-ratio:1.25;border-radius:6px;margin-bottom:2px}
+.rp b{font:700 8.5px/1.15 var(--sans);color:#1A1A1A;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rpr{display:flex;align-items:center;justify-content:space-between;font:600 8px/1 var(--sans);color:#6B6B6B}
+.radd{display:grid;place-items:center;width:14px;height:14px;border-radius:4px;background:#1A1A1A;color:#fff;font:700 10px/1 var(--sans);font-style:normal;transition:background .3s,transform .3s var(--ease)}
+.rp:hover{transform:translateY(-3px);border-color:#F2C3AE;box-shadow:0 10px 18px -12px rgba(226,87,43,.6)}
+.rp:hover .radd{background:#E2572B;transform:rotate(90deg)}
+.svc:hover .rp:nth-child(1){transition-delay:.05s}
+/* food, drawn in CSS */
+.dish.d0{border-radius:50%;background:
+  radial-gradient(circle at 50% 50%,transparent 0 46%,#F4EEE6 47% 54%,#DCD3C7 55% 57%,transparent 58%),
+  radial-gradient(circle at 40% 42%,#8FCB5A 0 5%,transparent 6%),radial-gradient(circle at 60% 58%,#E04A2E 0 6%,transparent 7%),
+  radial-gradient(circle at 56% 38%,#F2C14E 0 5%,transparent 6%),radial-gradient(circle at 42% 62%,#6B3A1E 0 7%,transparent 8%),
+  radial-gradient(circle at 50% 50%,#C8742F 0 40%,#9C4F1C 46%,transparent 47%)}
+.dish.d1{background:radial-gradient(60% 36% at 50% 30%,#E9A14A 0 60%,transparent 62%),linear-gradient(180deg,transparent 46%,#6E3A1E 46% 58%,#F3C548 58% 63%,#7FBF4A 63% 68%,#E9A14A 68% 80%,transparent 80%),linear-gradient(135deg,#FFF3E4,#FBE3CC)}
+.dish.d2{background:radial-gradient(circle at 50% 56%,#F6EFE6 0 38%,transparent 39%),radial-gradient(circle at 50% 56%,#B4421F 0 33%,transparent 34%),radial-gradient(circle at 44% 50%,#F2E3C8 0 6%,transparent 7%),radial-gradient(circle at 58% 60%,#F2E3C8 0 5%,transparent 6%),linear-gradient(135deg,#2B2622,#4A3A30)}
+.dish.d2{background:radial-gradient(circle at 44% 52%,#F2E3C8 0 6%,transparent 7%),radial-gradient(circle at 58% 62%,#F2E3C8 0 5%,transparent 6%),radial-gradient(circle at 52% 44%,#5FA83E 0 3%,transparent 4%),radial-gradient(circle at 50% 56%,#B4421F 0 30%,#2E2A27 31% 37%,transparent 38%),linear-gradient(135deg,#F7E6D2,#EFD3B6)}
+.dish.d3{background:radial-gradient(34% 12% at 50% 26%,#FFF8EE 0 70%,transparent 72%),linear-gradient(90deg,transparent 30%,#7A4A2E 30% 70%,transparent 70%) 0 30%/100% 62% no-repeat,radial-gradient(4% 4% at 62% 14%,#C9202F 0 90%,transparent),linear-gradient(135deg,#FDEBF0,#F6D6DF)}
+@keyframes dishSpin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.rhero .dish.d0{animation:none}}
+/* nicer burger + shake */
+.dish.d1,.dish.d3{position:relative;overflow:hidden}
+.dish.d1{background:radial-gradient(120% 90% at 50% 100%,#FFE9D2,#FBDDBF)}
+.dish.d1::before{content:"";position:absolute;left:18%;right:18%;top:20%;height:30%;border-radius:50% 50% 12% 12%/90% 90% 12% 12%;
+  background:radial-gradient(circle at 30% 40%,#FFF4DC 0 3%,transparent 4%),radial-gradient(circle at 55% 30%,#FFF4DC 0 3%,transparent 4%),radial-gradient(circle at 70% 50%,#FFF4DC 0 3%,transparent 4%),linear-gradient(180deg,#F0A64A,#D9822F)}
+.dish.d1::after{content:"";position:absolute;left:16%;right:16%;top:50%;height:30%;border-radius:3px 3px 40% 40%/3px 3px 70% 70%;
+  background:linear-gradient(180deg,#7DC24A 0 16%,#F6C93F 16% 30%,#5A2E17 30% 62%,#E9A14A 62%)}
+.dish.d3{background:radial-gradient(120% 90% at 50% 100%,#FDE3EA,#F6D2DC)}
+.dish.d3::before{content:"";position:absolute;left:30%;right:30%;top:30%;bottom:10%;clip-path:polygon(0 0,100% 0,86% 100%,14% 100%);
+  background:linear-gradient(180deg,#8B5536,#5E321C);box-shadow:inset 0 0 0 2px rgba(255,255,255,.4)}
+.dish.d3::after{content:"";position:absolute;left:27%;right:27%;top:16%;height:20%;border-radius:50% 50% 40% 40%;
+  background:radial-gradient(circle at 62% 12%,#D7263D 0 12%,transparent 13%),radial-gradient(60% 70% at 50% 70%,#FFFDF8,#F3E8DA)}
 </style>
 <!--HEAD-END-->
 <a class="skip" href="#main">Skip to content</a>
