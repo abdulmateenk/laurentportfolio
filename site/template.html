@@ -734,6 +734,11 @@ ul.ind-grid{grid-template-columns:repeat(3,max-content);column-gap:clamp(24px,3v
 .rcart .cartn{background:#FFC233;color:#1A1A1A}
 @media (prefers-reduced-motion: reduce){.rslides img{animation:none}.rslides img:first-child{opacity:1}.rdots i{animation:none}}
 .rhero>.rslides{position:absolute;inset:0;max-width:none;display:block;z-index:0}
+/* photo sits on top of the drawn dish; the drawing only shows if the photo can't load */
+.rp .dwrap{position:relative;display:block;width:100%;aspect-ratio:1.25;border-radius:6px;overflow:hidden;margin-bottom:2px}
+.rp .dwrap .dimg{position:absolute;inset:0;width:100%;height:100%;margin:0;z-index:2}
+.dish.d4{background:repeating-linear-gradient(60deg,transparent 0 9px,#D98E3A 9px 13px,transparent 13px 22px),radial-gradient(circle at 70% 30%,#5A2E17 0 14%,transparent 15%),linear-gradient(135deg,#FFF1DD,#F6DDBE)}
+.rhero{background:radial-gradient(70% 120% at 100% 50%,rgba(255,194,51,.35),transparent 60%),linear-gradient(115deg,#1B120C,#3A1D10 60%,#6B2F14)}
 </style>
 <!--HEAD-END-->
 <a class="skip" href="#main">Skip to content</a>
