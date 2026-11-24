@@ -778,6 +778,12 @@ ul.ind-grid{grid-template-columns:repeat(3,max-content);column-gap:clamp(24px,3v
 /* IvCon wordmark: clean serif text, no icon */
 .ivl span{font:600 13px/1 "Cormorant Garamond","Playfair Display",Georgia,"Times New Roman",serif;letter-spacing:.01em;color:var(--iv)}
 .ivl small{font:600 5.5px/1 var(--sans);letter-spacing:.32em;margin-top:2px}
+/* IvCon banner: three photos fade in turn, like the OG Burgers slider */
+.ivsl img{opacity:0;animation:rSlide 12s infinite;transform:scale(1.06)}
+.ivsl img:nth-child(2){animation-delay:4s}
+.ivsl img:nth-child(3){animation-delay:8s}
+.ivhero .rdots{z-index:2}
+@media (prefers-reduced-motion: reduce){.ivsl img{animation:none}.ivsl img:first-child{opacity:1}}
 </style>
 <!--HEAD-END-->
 <a class="skip" href="#main">Skip to content</a>
