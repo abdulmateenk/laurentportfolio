@@ -51,7 +51,7 @@
     document.documentElement.classList.remove('ld');
   }
   requestAnimationFrame(function(){ requestAnimationFrame(function(){ setTimeout(startHero, introOn ? 1750 : 0); }); });
-  if (introOn) setTimeout(function(){ var el = $('#intro'); if (el) el.remove(); document.documentElement.classList.remove('intro'); }, 2700);
+  if (introOn) setTimeout(function(){ var el = $('#intro'); if (el) el.remove(); document.documentElement.classList.remove('intro'); if (lenis) { lenis.resize(); lenis.start(); } }, 2700);
 
   /* ---- Rotating hero line ---- */
   if (!reduce) {
